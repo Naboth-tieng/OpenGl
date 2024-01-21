@@ -1,0 +1,30 @@
+# Project: TestGL
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Untitled4.o $(RES)
+LINKOBJ  = Untitled4.o $(RES)
+LIBS =  -L"D:/DevC/Dev-Cpp/lib" lib/libglu32.a lib/libglut32.a lib/libopengl32.a  
+INCS =  -I"D:/DevC/Dev-Cpp/include" 
+CXXINCS =  -I"D:/DevC/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/DevC/Dev-Cpp/include/c++/3.4.2/backward"  -I"D:/DevC/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"D:/DevC/Dev-Cpp/include/c++/3.4.2"  -I"D:/DevC/Dev-Cpp/include" 
+BIN  = TestGL.exe
+CXXFLAGS = $(CXXINCS)   -fshort-double
+CFLAGS = $(INCS)   -fshort-double
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before TestGL.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "TestGL.exe" $(LIBS)
+
+Untitled4.o: Untitled4.cpp
+	$(CPP) -c Untitled4.cpp -o Untitled4.o $(CXXFLAGS)
